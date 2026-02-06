@@ -1,0 +1,424 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/Style_p1.css">
+    </head>
+    <body>
+        <div class="cuerpo">
+            <div class="p1">
+                <button class="reg-inicio">
+                    <a href="index.html"><h2>Regresar al inicio</h2></a>
+                </button>
+                <br>
+                <br>
+
+                <img height="200px" width="200px" src="multimedia/perfil_p1.png">
+                <h3>Carlos López Reyes</h3>
+                <p>"Mis padres me trajeron, ya no quiero
+                    seguir consumiendo cristal y están 
+                preocupados </p>
+                <table>
+                    <tr>
+                        <th>Edad: </th>
+                        <td>20 años </td>
+                    </tr>
+                    <tr> 
+                        <th>Ejercito de reserva: </th>
+                        <td>110/65 mmHg</td>
+                    </tr>
+                    <tr>
+                        <th>FC: </th>
+                        <td>72 lpm</td>
+                    </tr>
+                    <tr>
+                        <th>Delaware: </th>
+                        <td>18 rpm</td>
+                    </tr>
+                    <tr>
+                        <th>Temperatura: </th>
+                        <td>36,2°C</td>
+                    <tr>
+                        <th>Peso: </th>
+                        <td>65 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Talla: </th>
+                        <td>168 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Alergias: </th>
+                        <td>Ninguna</td>
+                    </tr>
+                </table>
+                
+
+            </div>
+            <div class="tabs">
+                <div class="menu">
+                    <button class="titulo active" onclick="mostrar('c1')">Historico</button>
+                    <button class="titulo" onclick="mostrar('c2')">Entrevista</button>
+                    <button class="titulo" onclick="mostrar('c3')">Diagnóstico</button>
+                    <button class="titulo" onclick="mostrar('c4')">Tratamiento</button>
+                    <button class="titulo" onclick="mostrar('c5')">Consideraciones</button>
+                    
+                </div>
+                <div class="contenido">
+                    <div id="c1" class="panel activo">
+                        <h1>Patológicos Personales</h1>
+                        <p>Persona con VIH desde julio de 2021, actualmente en tratamiento con Biktarvy 
+                            (bictegravir 50 mg, emtricitabina 200 mg, tenofovir 25 mg) una tableta diaria.
+                            Menciona que el último análisis de carga viral fue hace unos meses, con carga indetectable.</p>
+                        <br>
+                        <p>Presentó viruela símica hace dos meses, con resolución sin complicaciones médicas</p>
+                        <br>
+                        <img src="multimedia/patron_consumo.png">
+                    </div>
+                    <div id="c2" class="panel">
+                        <p><em><strong>Instrucciones: </strong></em>A continuación, se presenta una entrevista. En la parte inferior se mostrará 
+                            el texto correspondiente a la pregunta realizada del paciente. Después de leerlo, 
+                            utiliza el botón Continuar para avanzar y escuchar las siguientes respuestas. 
+                            Si deseas volver a la pregunta anterior, presiona el botón Regresar.</p>
+                        <video class="entrevista" id="entre" controls>
+                            <source src="multimedia/Entrevista.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                        <div id="preguntas" class="pregunta">
+                            <p id="textoMensaje"></p>
+                            <br>
+                            <button onclick="regresar()">regresar</button>
+                            <button onclick="continuar()">Continuar</button>
+                        </div>
+
+                    </div>
+                    <div id="c3" class="panel">
+                        <h1>Diagnostico Adicto</h1>
+                        <br>
+                        <p>Derivado de la entrevista anterior, ¿Cuál es el diagnóstico del paciente?</p>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('correcto')"><b>a) </b> Dependencia de metanfetaminas</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>b) </b> Patrón nocivo uso de metanfetaminas</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>c) </b> Episodio de consumo nocivo de metanfetaminas</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>d) </b> Consumo de riesgo de matanfetaminas</button>
+                        <br>
+                        <br>
+                        <p>¿Qué otros diagnósticos tiene el paciente?</p>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>a) </b> Demencia por VIH</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>b) </b> Enfermedad por VIH</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('correcto')"><b>c) </b> Infección asintomática por VIH</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>d) </b> Exposición al virus VIH</button>
+                    
+                    
+
+                    </div>
+                    <div id="c4" class="panel">
+                        <h1>Implementación de Tratamiento Farmacológico</h1>
+                        <br>
+                        <p>Considerando que la evidencia actual es débil y no hay pautas específicas de tratamiento, 
+                            ¿Qué tratamiento farmacológico implementaría?</p>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>a) </b> Valproato de magnesio 600 mg/día</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('correcto')"><b>b) </b> Topiramato 200 mg/día</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>c) </b> Pregabalina 75 mg/día</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>d) </b> Gabapetina 900 mg/día</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>e) </b> Risperidona 2 mg/día</button>
+                        <br>
+                        <br>
+                        <p>Si el paciente tuvo efectos colaterales severos por el primer tratamiento, 
+                            ¿Qué otra opción farmacológica hay?</p>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>a) </b> Carbamazepina 600 mg/día</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>b) </b> Olanzapina 10 mg/día</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('incorrecto')"><b>c) </b> Topiramato 200 mg/día</button>
+                        <br>
+                        <button class="diag" onclick="mostrarRetro('correcto')"><b>d) </b> Metilfenidato 54 mg/día</button>
+                        <br>
+                    </div>
+                    <div id="c5" class="panel">
+                        <h1>Consideraciones Generales</h1>
+                        <ul>
+                            <li>
+                                La metanfetamina, llamada también cristal, es una droga estimulante del grupo anfetamínico que produce 
+                            efectos simpaticomiméticos, por lo que sus efectos son la estimulación, euforia, desinhibición, activación y 
+                            bienestar además de incrementar el deseo sexual. La ruta de administración puede ser fumada, intravenosa, vía 
+                            rectal, esnifada o vía oral (Grupo de trabajo sobre tratamientos del VIH, 2021).
+                            </li>
+                            <li>
+                                Rectal: se diluye la droga en agua y se introduce en el recto con una jeringa sin aguja.
+
+                            </li>
+                            <li>
+                                Intramuscular: se inyecta en el músculo y los efectos se producen en 10-30 minutos.
+                            </li>
+                            <li>
+                                Subcutánea: Es la vía de administración más lenta y puede producir abscesos.
+
+                            </li>
+                        </ul>
+                        
+                        <br>
+                        <p>En la siguiente tabla, se muestra el porcentaje de absorción de metanfetaminas según la vía de administración.</p>
+                        <img src="multimedia/tabla1.png">
+                        <p>La evaluación del consumo y las consecuencias de estos son los elementos fundamentales para elaborar un diagnóstico. La información
+                            confiable sobre todos los aspectos del uso de metanfetaminas debe incluir:
+                        </p>
+                        <ul>
+                            <li>Patrón de consumo: tipo de metanfetamina usada, edad de inicio, cantidad y frecuencia, vía de administración, períodos significativos
+                                de remisión, fecha de consumo más reciente y uso de otras sustancias psicoactivas.</li>
+                            <li>Consecuencias del consumo: riesgos físicos y psicológicos a si mismo oa terceras personas, pérdida de control del consumo (incluido craving), 
+                                datos de priorización del consumo por encima de otras actividades relevantes y datos de neuroadaptación (tolerancia y/ síndrome de abstinencia)
+
+                            </li>
+                        </ul>
+                        <h1>Tratamiento Recomendado</h1>
+                        <p>El abordaje con evidencia más robusta son las intervenciones psicosociales, incluida la terapia cognitivo-conductual, manejo de contingencias o entrevista
+                            motivacional. Actualmente no hay pautas específicas o fundamentales para el tratamiento farmacológico de la dependencia a metanfetaminas ya que la evidencia
+                            disponible consiste en estudios pequeños y con evidencia débil. Sin embargo, hay algunos medicamentos que han demostrado cierta evidencia de respuesta, 
+                            disminuyendo el craving y/o reduciendo la frecuencia de consumo (Grigg, Manning, Arunogiri, & Volpe, 2018)
+
+                        </p>
+                        <br>
+                        <table>
+                            <tr>
+                                <th>Medicamento y dosis</th>
+                                <th>Efectos observador</th>
+                                <th>Mecanismos de acción</th>
+                                <th>Efectos colaterales</th>
+                            </tr>
+                            <tr>
+                                <td>Topiramato 200-400 mg/día (inicio gradual)</td>
+                                <td>Cierta evidencia de reducción en el uso y el craving.</td>
+                                <td>Aumenta la actividad GABA y antagoniza la actividad glutamatérgica.</td>
+                                <td>Pérdida de peso, sedación, parestesias, percepción del gusto, disfunción 
+                                    cognitiva y efectos en memoria a corto plazo, nefrolitiasis.</td>
+                            </tr>
+                            <tr>
+                                <td>Metilfenidato de liberación prolongada Dosis inicial: 18 mg/día Dosis óptima: 54 mg/día</td>
+                                <td>Cierta evidencia de reducción en la frecuencia de uso y el craving. Ligera mejoría en el apego al tratamiento.</td>
+                                <td>Actúa como terapia agonista al aumentar la acción noradrenérgica y dopaminérgica.</td>
+                                <td>Insomnio, cefalea, nerviosismo, temblores, anorexia, pérdida de peso.</td>
+                            </tr>
+                            <tr>
+                                <td>Naltrexona 50-200 mg/día</td>
+                                <td>Cierta disminución del craving y mejora el apego al tratamiento.</td>
+                                <td>Antagonista competitivo puro de receptores opiáceos, disminuyendo los efectos en los sistemas de recompensa.</td>
+                                <td>A largo plazo puede provocar disforia, anhedonia y síntomas depresivos.</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p>Tras algunos estudios, se ha determinado que los siguientes medicamentos no cuentan con efectos significativos en el tratamiento 
+                            de la dependencia a metanfetaminas (Siefried, Acheson, Lintzeris, & Ezard, 2020):</p>
+                        <ul>
+                            <li>Antidepresivos: Bupropión, sertralina, Imipramina y mirtazapina (de este último, sólo se ha visto cierto efecto en la reducción
+                                de uso en la población de hombres que tienen sexo con hombres)</li>
+                            <li>Modafinilo</li>
+                            <li>Antipsicóticos: aripiprazol, risperidona</li>
+                            <li>Agonistas GABA: Gabapentina, hidroxicina</li>
+                        </ul>
+                        <h1>Bibliografía</h1>
+                        <p>Grigg, J., Manning, V., Arunogiri, S. y Volpe, I. (2018). Pautas de metanfetamina. Punto de inflexión Tratamiento, Investigación, Educación.</p>
+                        <p>Grupo de trabajo sobre tratamientos del VIH. (2021). golpeando Guía para la reducción de daños asociados al uso de drogas inyectables en las sesiones 
+                            de sexo. (2a ed.). (J. Hernández, Ed.) Barcelona. Obtenido de https://www.sidastudi.org/resources/inmagic-img/DD78905.pdf Siefried, k., Acheson, L., 
+                            Lintzeris, N., & Ezard, N. (2020).</p>
+                        <p>Tratamiento farmacológico de la dependencia de metanfetamina/anfetamina: una revisión sistemática. Farmacos del SNC, 337-365.</p>
+                    </div>
+                        
+                </div>  
+            </div>
+        </div>
+        <div id="correcto" class="panel-retro">
+            <span class="cerrar" onclick="cerrar()">✖</span>
+            <h2>Es la respuesta correcta</h2>
+
+
+        </div>
+        <div id="incorrecto" class="panel-retro">
+            <span class="cerrar" onclick="cerrar()">✖</span>
+            <h2>Es la respuesta incorrecta</h2>
+           <p>Intentalo de nuevo</p>
+        </div>
+        <br>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+    </body>
+    <script>
+        function mostrar(id) {
+            document.querySelectorAll('.panel')
+        .forEach(p => p.style.display = 'none');
+
+        document.getElementById(id).style.display = 'block';
+        }
+        
+        function mostrarRetro(tipo) {
+            document.getElementById("correcto").style.display = "none";
+            document.getElementById("incorrecto").style.display = "none";
+
+            document.getElementById(tipo).style.display = "block";
+            if (tipo === "correcto") {
+                lanzarConfetti();
+                const h2 = el.querySelector("h2");
+                h2.style.animation = "none";
+                h2.offsetHeight; // 👈 reset
+                h2.style.animation = "pop 0.5s ease";
+            }
+        }
+        function lanzarConfetti() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+        function cerrar() {
+            document.getElementById("correcto").style.display = "none";
+            document.getElementById("incorrecto").style.display = "none";
+        }
+
+    </script>
+    <script>
+        const video = document.getElementById("entre");
+        const preguntas = document.getElementById("preguntas");
+        const textoMensaje = document.getElementById("textoMensaje");
+        let indiceActual = -1;
+
+
+        
+        const mensajes = [
+            {
+                pausa: 1,
+                continuar: 23,
+                texto: "¿Le ha sucedido que a causa de su consumo de metanfetaminas, se haya expuesto a algún peligro contra su integridad física?  Como conducir vehículos en ese estado, destruir equipamiento público, caminar en zonas peligrosas, molestar a los vecinos, robar, pelearse, o algo parecido.",
+                mostrado: false
+            },
+            {
+                pausa: 43,
+                continuar: 50,
+                texto: "¿Tuvo un periodo en el que terminó consumiendo más cantidad de metanfetamina lo que pretendía?", 
+                mostrado: false
+            },
+            {
+                pausa: 56,
+                continuar: 60,
+                texto: "¿Consumías más tiempo, porque no podías parar?", 
+                mostrado: false
+            },
+            {
+                pausa: 69,
+                continuar: 79,
+                texto: "¿Más de una vez intentó disminuir o dejar su consumo de cristal pero no ha podido lograrlo?", 
+                mostrado: false
+            },
+            {
+                pausa: 85,
+                continuar: 95,
+                texto: "¿Ha sentido un deseo tan grande de consumir cristal que no pudo resistir o pensar en nada más?", 
+                mostrado: false
+            },
+            {
+                pausa: 108,
+                continuar: 118,
+                texto: "¿Ha puesto más empeño en conseguir cristal que para realizar otras actividades?", 
+                mostrado: false
+            },
+            {
+                pausa: 123,
+                continuar: 128,
+                texto: "¿Ha dedicado más tiempo que antes en consumir cristal? ", 
+                mostrado: false
+            },
+            {
+                pausa: 136,
+                continuar: 141,
+                texto: "¿Esto es porque prefieres consumir, por encima de otras cosas? ", 
+                mostrado: false
+            },
+            {
+                pausa: 145,
+                continuar: 150,
+                texto: " ¿Tuvo problemas en la escuela debido a su consumo de metanfetaminas?", 
+                mostrado: false
+            },
+            {
+                pausa: 159,
+                continuar: 168,
+                texto: " Por ejemplo: debido al consumo¿Dejaste de ir a la escuela, bajo tu rendimiento o tuviste algún incidente en la escuela?", 
+                mostrado: false
+            },
+            {
+                pausa: 178,
+                continuar: 196,
+                texto: " ¿Ha notado que la misma cantidad de cristal tiene menos efecto que antes?",  
+                mostrado: false
+            },
+            {
+                pausa: 202,
+                continuar: 210,
+                texto: " ¿Este incremento fue porque el efecto ya no era el mismo y necesitaba más cantidad?",  
+                mostrado: false
+            },
+            {
+                pausa: 223,
+                continuar: 242,
+                texto: " ¿Alguna vez al dejar o reducir su consumo de metanfetaminas tuvo problemas para dormir? O ¿estuvo temblando o manos temblorosas? ¿se sintió nervioso o más inquieto de lo habitual?, ¿su corazón latía muy rápido o sudaba mucho?", 
+                mostrado: false
+            }
+        ];
+
+        video.addEventListener("timeupdate", () => {
+            mensajes.forEach((m, index) => {
+                if (video.currentTime >= m.pausa && 
+                video.currentTime < m.pausa + 0.5 && 
+                indiceActual !== index) {
+                    indiceActual = index;
+                    video.pause();
+                    mostrarMensaje(m);
+                }
+            });
+        });
+
+        function mostrarMensaje(mensaje) {
+            mensaje.mostrado = true;
+            textoMensaje.textContent = mensaje.texto;
+            preguntas.style.display = "block";
+        }
+
+        function continuar() {
+            if (indiceActual < mensajes.length - 1) {
+                video.currentTime = mensajes[indiceActual].continuar;
+            } else {
+                video.currentTime = video.duration;
+            }
+            preguntas.style.display = "none";
+            video.play();
+        }
+        function regresar(){
+            if (indiceActual > 0) {
+                indiceActual--;
+                video.currentTime = mensajes[indiceActual].pausa;
+                mostrarMensaje(mensajes[indiceActual]);
+            }
+        }
+
+
+
+    </script>
+
+
+
+
+
+</html>

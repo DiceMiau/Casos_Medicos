@@ -1,0 +1,167 @@
+
+body{
+    margin: 0;
+    min-height: 100vh;
+
+
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+
+    background: #f0f8ff;
+}
+.cuerpo{
+    display: flex;
+    gap: 20px;
+
+}
+.p1{
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    gap: 20px;
+    padding: 20px;
+    background-color: #bbdefb;
+    text-align: center;
+}
+
+.acordeon{
+    display: flex;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+@media (max-width: 768px) {
+
+    .menu {
+
+        display: flex;
+        gap: 10px;
+        background: #e3f2fd;
+        padding: 10px;
+    }
+}
+
+.menu button {
+    padding: 10px 20px;
+    border: none;
+    background: #bbdefb;
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background: #90caf9;
+}
+
+.panel {
+    max-width: 600px;
+    display: none;
+    padding: 20px;
+    border-top: 2px solid #90caf9;
+    background: #f5faff;
+    text-align: justify;
+    
+}
+
+.panel.activo {
+    display: block;
+   
+
+
+}
+.panel-retro {
+    display: none;
+    position: fixed;          /* 👈 flota sobre TODO */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    z-index: 9999;    
+    text-align: center;
+}
+@keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+#correcto h2 {
+    animation: pop 0.5s ease;
+}
+.cerrar {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.diag {
+    
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    max-height: 50px;
+    padding: 10px 20px;
+    border: none;
+    background: #bbdefb;
+    cursor: pointer;
+}
+
+.diag:hover {
+    background: #90caf9;
+}
+h1{
+    text-align: center;
+}
+.entrevista{
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12%;
+}
+.pregunta {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: #e3f2fd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.pregunta button {
+    padding: 10px 20px;
+    border: none;
+    background: #90caf9;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pregunta button:hover {
+    background: #1976d2;
+}
+.reg-inicio {
+    padding: 10px 20px;
+    border: none;
+    background: #f0f8ff;
+    cursor: pointer;
+    border-radius: 12%;
+}
+
+.reg-inicio:hover {
+    background: #90caf9;
+}
+@media (max-width: 480px) {
+    h1 { font-size: 1.2rem; }
+    p{font-size: 1rem;}
+    p{font-size: 1.1em;} 
+    p{font-size: 2vw; }
+    p{text-align: justify;}
+}
+

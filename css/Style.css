@@ -1,0 +1,61 @@
+body{
+    background-color: #F0F8FF;
+    
+
+}
+.continuar{
+    background: #ffffff;
+    color: #050000;
+    border-radius: 2vh;
+    
+
+}
+img{
+    max-width: 250px;
+    height: auto;
+    border-radius: 12%;
+}
+.pacientes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+    gap: 20px;
+
+
+}
+.paciente{
+    background-color: #F0F8FF;
+    gap: 20px;
+    padding: 20px;
+    flex: 2;
+    max-width: 350px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12%;
+    border: 2px solid #90caf9;
+    min-height: 70vh;
+
+}
+button{
+    padding: 10px 20px;
+    border: none;
+    background: #f0f8ff;
+    cursor: pointer;
+    border-radius: 12%;
+}
+button:hover{
+    background: #90caf9;
+
+}
+h1,h2{
+    text-align: center;
+}
+p{
+    text-align: center;
+    font-size: 1rem; 
+    font-size: 1.1em; 
+    font-size: 2vw; 
+}
+
+
