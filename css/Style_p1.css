@@ -23,8 +23,8 @@ body{
 
 .acordeon{
     display: flex;
-    width: 100%;
     max-width: 250px;
+    width: 100%;
     height: auto;
 }
 @media (max-width: 768px) {
@@ -67,7 +67,7 @@ body{
 }
 .panel-retro {
     display: none;
-    position: fixed;          /* 👈 flota sobre TODO */
+    position: fixed;          
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -160,4 +160,9 @@ h1{
     p{font-size: 2vw; }
     p{text-align: justify;}
 }
-
+@media (max-width: 768px){
+    .cuerpo{
+        flex-direction: column;
+        align-items: center;
+    }
+}
