@@ -34,7 +34,7 @@ img{
     justify-content: center;
     border-radius: 12%;
     border: 2px solid #90caf9;
-    min-height: 70vh;
+    min-height: auto;
 
 }
 button{
@@ -54,8 +54,11 @@ h1,h2{
 p{
     text-align: center;
     font-size: 1rem; 
-    font-size: 1.1em; 
-    font-size: 2vw; 
+}
+@media (max-width: 768px){
+    .pacientes{
+        flex-direction: column;
+    }
 }
 
 
